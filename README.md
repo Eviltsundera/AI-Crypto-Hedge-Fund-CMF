@@ -57,6 +57,8 @@ python -m pytest
 - All runtime paths should be repository-relative.
 - Final notebook must run top-to-bottom from a clean kernel.
 - Required market data snapshots should be stored under `data/` and documented in `data/manifest.json`.
+- The repository keeps a compact 1-minute sample under `data/sample/` for smoke tests.
+- The full 1-minute 120-pair research snapshot is stored under ignored `data/external/` and moved with `scp` or published as an external data bundle with checksums.
 - `internal_docs/` and `AGENTS.md` are intentionally ignored because they contain local planning and agent instructions.
 
 ## Remote Experiments
@@ -68,3 +70,16 @@ Heavy experiments can be run on the `beleriand` server. Use exactly:
 ```
 
 Copy only reproducible outputs needed for the final notebook back into the repository.
+
+Prepare the full ignored data bundle on `beleriand`:
+
+```bash
+uv sync
+uv run python scripts/prepare_data.py --mode full --large-limit 120 --start 2025-06-22 --end 2026-06-22
+```
+
+Prepare or refresh the compact committed sample:
+
+```bash
+uv run python scripts/prepare_data.py --mode sample --start 2026-06-01 --end 2026-06-08
+```

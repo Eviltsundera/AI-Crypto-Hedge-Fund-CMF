@@ -13,6 +13,16 @@ def data_dir() -> Path:
     return project_root() / "data"
 
 
+def sample_data_dir() -> Path:
+    """Return the committed smoke-test data directory."""
+    return data_dir() / "sample"
+
+
+def external_data_dir() -> Path:
+    """Return the ignored directory for large external data bundles."""
+    return data_dir() / "external"
+
+
 def reports_dir() -> Path:
     """Return the project reports directory."""
     return project_root() / "reports"

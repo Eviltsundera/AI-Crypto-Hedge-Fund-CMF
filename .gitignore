@@ -6,6 +6,7 @@ internal_docs/
 __pycache__/
 *.py[cod]
 *.pyo
+*.egg-info/
 .python-version
 .pytest_cache/
 .ruff_cache/
@@ -31,3 +32,9 @@ Thumbs.db
 .env
 .env.*
 *.local
+
+# Large external data bundles are moved with scp / object storage, not git
+data/external/
+data/raw/full/
+data/raw/binance_klines_1m/
+data/sample/archives/
