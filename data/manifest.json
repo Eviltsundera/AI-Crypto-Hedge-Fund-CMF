@@ -1,0 +1,8 @@
+{
+  "description": "Data manifest for the AI Crypto Hedge Fund MVP. Populate during data ingestion.",
+  "datasets": [],
+  "notes": [
+    "All final notebook inputs should be available from repository-relative paths.",
+    "Live API calls may be used to create snapshots, but final reproduction should rely on included data."
+  ]
+}
