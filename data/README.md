@@ -29,5 +29,5 @@ uv run python scripts/prepare_data.py --mode sample --start 2026-06-01 --end 202
 Prepare the full ignored bundle:
 
 ```bash
-uv run python scripts/prepare_data.py --mode full --large-limit 120 --start 2025-06-22 --end 2026-06-22
+uv run python scripts/prepare_data.py --mode full --large-limit 120 --candidate-limit 250 --target-symbol-count 120 --min-symbol-coverage 0.95 --start 2025-06-22 --end 2026-06-22
 ```

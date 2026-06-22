@@ -23,8 +23,11 @@ STABLE_OR_FIAT_BASE_ASSETS = {
     "USDC",
     "USDP",
     "USDS",
+    "USD1",
     "UST",
     "VAI",
+    "XAUT",
+    "XUSD",
 }
 
 DEFAULT_SMALL_UNIVERSE = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "SOLUSDT", "XRPUSDT", "ADAUSDT"]

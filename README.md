@@ -75,7 +75,7 @@ Prepare the full ignored data bundle on `beleriand`:
 
 ```bash
 uv sync
-uv run python scripts/prepare_data.py --mode full --large-limit 120 --start 2025-06-22 --end 2026-06-22
+uv run python scripts/prepare_data.py --mode full --large-limit 120 --candidate-limit 250 --target-symbol-count 120 --min-symbol-coverage 0.95 --start 2025-06-22 --end 2026-06-22
 ```
 
 Prepare or refresh the compact committed sample:
