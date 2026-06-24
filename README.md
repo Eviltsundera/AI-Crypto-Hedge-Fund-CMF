@@ -108,3 +108,9 @@ Generate the dynamic portfolio rebalancing comparison:
 ```bash
 uv run python scripts/run_dynamic_rebalancing.py --snapshot auto
 ```
+
+Generate the 100+ pair large-universe sparse allocation comparison:
+
+```bash
+uv run python scripts/run_large_universe.py --snapshot auto
+```

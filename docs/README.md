@@ -9,5 +9,6 @@ Available notes:
 - [Single-Asset Econometric, ML, and Agent Strategy](single_asset_models.md)
 - [Static Multi-Asset Portfolio](static_portfolio.md)
 - [Dynamic Portfolio Rebalancing](dynamic_rebalancing.md)
+- [Large-Universe Portfolio](large_universe.md)
 
 Private planning materials live in `internal_docs/` and are ignored by git.

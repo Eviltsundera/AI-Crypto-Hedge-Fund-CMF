@@ -294,7 +294,23 @@
         "Full data is intentionally not committed to git.",
         "External publication is deferred until the final packaging task.",
         "After upload, add the public artifact URL here."
-      ]
+      ],
+      "processed_bundle": {
+        "relative_dir": "data/external/binance_spot_1m_120_12mo/processed",
+        "beleriand_dir": "/home/gajnanovda/AI-Crypto-Hedge-Fund-CMF/data/external/binance_spot_1m_120_12mo/processed",
+        "public_url": null,
+        "publication_status": "deferred_to_task_13",
+        "files": {
+          "prices_1m.parquet": {
+            "size_bytes": 95258376,
+            "sha256": "027a8a0ba6841e04e39513f8262a5d451bcb27369bb07a308e6059d617ef9dff"
+          },
+          "returns_1m.parquet": {
+            "size_bytes": 193142203,
+            "sha256": "2c4b8ed154f959fe7cb598524b214fcb423acab61ef3ae3169a4c717af6fe491"
+          }
+        }
+      }
     }
   },
   "known_limitations": [
