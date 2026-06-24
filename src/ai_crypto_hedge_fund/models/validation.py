@@ -220,8 +220,15 @@ def _smoothed_probability(
     features: pd.DataFrame,
     smoothing_window: int,
 ) -> pd.Series:
+    probabilities = classifier.predict_proba(features)
+    if probabilities.shape[1] == 1:
+        positive_probability = float(classifier.classes_[0] == 1)
+        values = [positive_probability] * len(features)
+    else:
+        positive_index = list(classifier.classes_).index(1)
+        values = probabilities[:, positive_index]
     probability = pd.Series(
-        classifier.predict_proba(features)[:, 1],
+        values,
         index=features.index,
         name="up_probability",
     )
