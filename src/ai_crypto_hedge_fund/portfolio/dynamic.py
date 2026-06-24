@@ -30,8 +30,8 @@ class DynamicRebalancingConfig:
     transaction_cost_bps: float = 5.0
     periods_per_year: int = CRYPTO_MINUTE_PERIODS_PER_YEAR
     lookback_periods: int = 30 * 24 * 60
-    rebalance_frequency: str = "7d"
-    drift_threshold: float = 0.05
+    rebalance_frequency: str = "7D"
+    drift_threshold: float = 0.02
     max_weight: float = 0.35
     min_weight: float = 0.0
     covariance_ridge: float = 1e-10
