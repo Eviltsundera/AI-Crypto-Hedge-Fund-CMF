@@ -84,3 +84,9 @@ Prepare or refresh the compact committed sample:
 ```bash
 uv run python scripts/prepare_data.py --mode sample --start 2026-06-01 --end 2026-06-08
 ```
+
+Generate the single-asset BTCUSDT baseline report:
+
+```bash
+uv run python scripts/run_baseline_strategy.py --snapshot auto
+```
