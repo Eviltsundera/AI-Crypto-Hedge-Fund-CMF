@@ -33,6 +33,33 @@ Outputs:
 - `reports/figures/static_portfolio_equity_curve.png`
 - `reports/figures/static_portfolio_weights.png`
 
+## Full-Snapshot Result Summary
+
+The committed report was generated on `beleriand` with the full ignored 1-minute data snapshot.
+
+Train period: `2025-06-26 12:00:00+00:00` to `2026-03-05 03:35:00+00:00`.
+
+Out-of-sample test period: `2026-03-05 03:36:00+00:00` to `2026-06-20 23:59:00+00:00`.
+
+Selection criterion: highest out-of-sample Sharpe ratio. The selected method is `max_sharpe_constrained`.
+
+| Strategy | Total Return | Annualized Volatility | Sharpe | Max Drawdown | Effective Assets | Max Weight |
+|---|---:|---:|---:|---:|---:|---:|
+| Equal weight | -0.1941 | 0.4884 | -1.2514 | -0.3285 | 6.00 | 0.1667 |
+| Inverse volatility | -0.1728 | 0.4697 | -1.1319 | -0.3108 | 5.56 | 0.2562 |
+| Max-Sharpe constrained | -0.1497 | 0.4593 | -0.9649 | -0.2931 | 2.99 | 0.3500 |
+
+Selected max-Sharpe constrained weights:
+
+| Asset | Weight |
+|---|---:|
+| ETHUSDT | 0.3500 |
+| BNBUSDT | 0.3500 |
+| XRPUSDT | 0.3000 |
+| BTCUSDT | 0.0000 |
+| SOLUSDT | 0.0000 |
+| ADAUSDT | 0.0000 |
+
 ## Trading Interpretation
 
 The portfolio is a research allocation, not an execution system. In a real trading setup, the static weights would need exchange-specific order sizing, liquidity checks, slippage assumptions, fee tiers, custody limits, and periodic re-estimation. The MVP assumes immediate fills at minute close prices and applies a simple transaction-cost model on the initial allocation only.
