@@ -32,6 +32,22 @@ Outputs:
 - `reports/metrics/single_asset_model_comparison.json`
 - `reports/figures/single_asset_model_comparison.png`
 
+## Full-Snapshot Result Summary
+
+The committed report was generated on `beleriand` with the full ignored BTCUSDT data snapshot.
+
+Out-of-sample test period: `2026-03-05 03:36:00+00:00` to `2026-06-20 23:59:00+00:00`.
+
+| Strategy | Total Return | Sharpe | Max Drawdown | Turnover |
+|---|---:|---:|---:|---:|
+| Buy-and-hold | -0.1126 | -0.7224 | -0.2859 | 1 |
+| Moving-average crossover | -0.4040 | -5.8061 | -0.4091 | 657 |
+| Econometric rolling | -0.4125 | -7.2193 | -0.4207 | 773 |
+| RandomForest | -0.0613 | -4.8854 | -0.0684 | 140 |
+| Agent-enhanced | -0.1321 | -4.3925 | -0.1399 | 194 |
+
+The RandomForest policy reduced drawdown and improved total return versus buy-and-hold in this down test period, while the deterministic agent reduced drawdown versus buy-and-hold but lagged it on total return.
+
 ## Bias Controls
 
 - Training labels are restricted to rows whose next-return timestamp is before the test split.
