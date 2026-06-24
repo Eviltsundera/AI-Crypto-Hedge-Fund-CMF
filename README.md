@@ -114,3 +114,11 @@ Generate the 100+ pair large-universe sparse allocation comparison:
 ```bash
 uv run python scripts/run_large_universe.py --snapshot auto
 ```
+
+Execute the final self-contained notebook in smoke mode:
+
+```bash
+DATA_MODE=sample uv run jupyter nbconvert --to notebook --execute notebooks/final_solution.ipynb --output final_solution.ipynb --output-dir notebooks --ExecutePreprocessor.timeout=300
+```
+
+The clean notebook run on `beleriand` completed in under 20 seconds in `DATA_MODE=sample` while reading the committed report artifacts.
