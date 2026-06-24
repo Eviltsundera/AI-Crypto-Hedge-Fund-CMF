@@ -59,6 +59,7 @@ python -m pytest
 - Required market data snapshots should be stored under `data/` and documented in `data/manifest.json`.
 - The repository keeps a compact 1-minute sample under `data/sample/` for smoke tests.
 - The full 1-minute 120-pair research snapshot is stored under ignored `data/external/` on `beleriand`; publishing it to external storage is intentionally deferred until final packaging.
+- Shared metrics and backtesting utilities live in `ai_crypto_hedge_fund.metrics` and `ai_crypto_hedge_fund.backtest`; see `docs/backtesting.md`.
 - `internal_docs/` and `AGENTS.md` are intentionally ignored because they contain local planning and agent instructions.
 
 ## Remote Experiments
