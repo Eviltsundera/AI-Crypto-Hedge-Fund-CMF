@@ -2,7 +2,7 @@
   "comparison_table": [
     {
       "annualized_volatility": 0.48675128482651836,
-      "average_active_assets": 0.0,
+      "average_active_assets": 120.0,
       "average_gross_exposure": 1.0,
       "max_drawdown": -0.2932460374530964,
       "rebalance_events": 0.0,
@@ -187,7 +187,7 @@
   "data_snapshot": "full",
   "event_summary": {
     "large_universe_equal_weight": {
-      "average_active_assets": 0.0,
+      "average_active_assets": 120.0,
       "average_gross_exposure": 1.0,
       "backtest_turnover": 0.9999999999999999,
       "event_count": 0.0,

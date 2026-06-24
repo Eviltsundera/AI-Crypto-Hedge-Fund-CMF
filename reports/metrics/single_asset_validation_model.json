@@ -1,0 +1,157 @@
+{
+  "comparison_table": [
+    {
+      "annualized_volatility": 0.4310171637109934,
+      "max_drawdown": -0.2858878320092548,
+      "sharpe_ratio": -0.72243932821862,
+      "strategy": "buy_and_hold",
+      "total_return": -0.11258893134326986,
+      "turnover": 1.0
+    },
+    {
+      "annualized_volatility": 0.10135796672255279,
+      "max_drawdown": -0.15853790465080486,
+      "sharpe_ratio": -5.4708347885073865,
+      "strategy": "validation_tuned_rf_60m",
+      "total_return": -0.15236189208814277,
+      "turnover": 388.0
+    }
+  ],
+  "config": {
+    "horizon_periods": 60,
+    "max_train_rows": 160000,
+    "min_samples_leaf": 300,
+    "periods_per_year": 525600,
+    "probability_smoothing_window": 60,
+    "random_forest_estimators": 120,
+    "random_forest_max_depth": 8,
+    "random_state": 42,
+    "symbol": "BTCUSDT",
+    "test_size": 0.3,
+    "threshold_grid": [
+      0.5,
+      0.52,
+      0.54,
+      0.56,
+      0.58,
+      0.6
+    ],
+    "transaction_cost_bps": 5.0,
+    "validation_size": 0.2
+  },
+  "data_snapshot": "full",
+  "feature_columns": [
+    "return_1",
+    "return_lag_1",
+    "return_lag_2",
+    "return_lag_3",
+    "return_lag_4",
+    "return_lag_5",
+    "rolling_mean_60",
+    "rolling_vol_60",
+    "rolling_mean_240",
+    "rolling_vol_240",
+    "momentum_15",
+    "momentum_60",
+    "momentum_360",
+    "ma_distance_60_360"
+  ],
+  "notes": [
+    "This is an improvement experiment, not a replacement for the original Task 06 comparison.",
+    "The probability threshold is selected on validation data inside the train period.",
+    "The final test period is evaluated once after threshold selection."
+  ],
+  "split_timestamp_utc": "2026-03-05T03:36:00+00:00",
+  "strategies": {
+    "buy_and_hold": {
+      "annualized_return": -0.33252314753015044,
+      "annualized_volatility": 0.4310171637109934,
+      "average_turnover": 6.4390256466391505e-06,
+      "calmar_ratio": -1.1631245205265885,
+      "cvar_95": 0.0013986392361045445,
+      "hit_rate": 0.5011469401745459,
+      "max_drawdown": -0.2858878320092548,
+      "sharpe_ratio": -0.72243932821862,
+      "sortino_ratio": -0.7216028945985962,
+      "total_cost": 0.0005,
+      "total_return": -0.11258893134326986,
+      "transaction_cost_bps": 5.0,
+      "turnover": 1.0,
+      "var_95": 0.0008717804844684762
+    },
+    "validation_tuned_rf_60m": {
+      "annualized_return": -0.4285915689254697,
+      "annualized_volatility": 0.10135796672255279,
+      "average_turnover": 0.0024992914379943832,
+      "benchmark_total_return": -0.11294777118582622,
+      "calmar_ratio": -2.7034012457114547,
+      "cvar_95": 1.1084135863372777e-05,
+      "excess_total_return": -0.03941412090231655,
+      "hit_rate": 0.48756647980451345,
+      "max_drawdown": -0.15853790465080486,
+      "sharpe_ratio": -5.4708347885073865,
+      "sortino_ratio": -1.1216329718222635,
+      "total_cost": 0.194,
+      "total_return": -0.15236189208814277,
+      "transaction_cost_bps": 5.0,
+      "turnover": 388.0,
+      "var_95": 0.0
+    }
+  },
+  "symbol": "BTCUSDT",
+  "target": "future 60-minute return direction",
+  "validation_summary": {
+    "fit_rows": 160000,
+    "selected_threshold": 0.54,
+    "test_direction_accuracy": 0.5066991316894695,
+    "test_roc_auc": 0.5423212566299714,
+    "test_rows": 155244,
+    "threshold_grid_results": [
+      {
+        "threshold": 0.5,
+        "validation_max_drawdown": -0.3837855389607777,
+        "validation_sharpe_ratio": -5.96775748468748,
+        "validation_total_return": -0.3249406922893352,
+        "validation_turnover": 441.0
+      },
+      {
+        "threshold": 0.52,
+        "validation_max_drawdown": -0.3187629011407932,
+        "validation_sharpe_ratio": -7.443785540560481,
+        "validation_total_return": -0.2876824990737522,
+        "validation_turnover": 567.0
+      },
+      {
+        "threshold": 0.54,
+        "validation_max_drawdown": -0.08756968822162914,
+        "validation_sharpe_ratio": -2.4478593732215876,
+        "validation_total_return": -0.041590547242662534,
+        "validation_turnover": 190.0
+      },
+      {
+        "threshold": 0.56,
+        "validation_max_drawdown": -0.029267974853484313,
+        "validation_sharpe_ratio": -4.610263107889453,
+        "validation_total_return": -0.022562937353200807,
+        "validation_turnover": 36.0
+      },
+      {
+        "threshold": 0.58,
+        "validation_max_drawdown": -0.014226097286475725,
+        "validation_sharpe_ratio": -5.651580925787644,
+        "validation_total_return": -0.014226097286475725,
+        "validation_turnover": 22.0
+      },
+      {
+        "threshold": 0.6,
+        "validation_max_drawdown": -0.016546483868285722,
+        "validation_sharpe_ratio": -7.397998141964472,
+        "validation_total_return": -0.01631596492549281,
+        "validation_turnover": 26.0
+      }
+    ],
+    "validation_direction_accuracy": 0.5083090439419264,
+    "validation_roc_auc": 0.4959664050344479,
+    "validation_rows": 72391
+  }
+}
