@@ -149,6 +149,7 @@ def run_large_universe_experiment(
     }
     selected_assets = pd.concat([momentum_selected, risk_adjusted_selected], ignore_index=True)
     event_summary = summarize_selected_assets(selected_assets, backtests)
+    event_summary["large_universe_equal_weight"]["average_active_assets"] = float(price_frame.shape[1])
     selected_strategy = max(backtests, key=lambda name: backtests[name].metrics[config.selection_metric])
     equity_curves = pd.concat(
         [result.equity_curve.rename(method) for method, result in backtests.items()],

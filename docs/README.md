@@ -11,6 +11,7 @@ Available notes:
 - [Dynamic Portfolio Rebalancing](dynamic_rebalancing.md)
 - [Large-Universe Portfolio](large_universe.md)
 - [Quality Assurance Report](qa_report.md)
+- [Submission Checklist](submission_checklist.md)
 - Presentation deck: [`reports/slides/presentation_outline.md`](../reports/slides/presentation_outline.md)
 
 Private planning materials live in `internal_docs/` and are ignored by git.

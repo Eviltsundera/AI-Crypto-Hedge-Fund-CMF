@@ -124,3 +124,4 @@ DATA_MODE=sample uv run jupyter nbconvert --to notebook --execute notebooks/fina
 The clean notebook run on `beleriand` completed in under 20 seconds in `DATA_MODE=sample` while reading the committed report artifacts.
 
 Final QA status is documented in `docs/qa_report.md`.
+Reviewer-facing submission steps are summarized in `docs/submission_checklist.md`.

@@ -8,6 +8,12 @@ paginate: true
 
 Automated research MVP for crypto portfolio construction, risk control, and AI-assisted allocation.
 
+Fund concept:
+
+- systematic long-only Binance spot portfolio;
+- no live trading in MVP;
+- risk-adjusted benchmark hurdle before performance fee.
+
 Implemented output:
 
 - reproducible notebook;
