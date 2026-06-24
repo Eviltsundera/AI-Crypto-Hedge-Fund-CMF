@@ -1,0 +1,189 @@
+{
+  "comparison_table": [
+    {
+      "annualized_volatility": 0.4593192416604781,
+      "average_event_turnover": 0.0,
+      "max_drawdown": -0.29312474005884714,
+      "rebalance_events": 0.0,
+      "sharpe_ratio": -0.9648884542697233,
+      "strategy": "static_max_sharpe_reference",
+      "total_return": -0.14965589729719153,
+      "turnover": 1.0
+    },
+    {
+      "annualized_volatility": 0.4725418037330937,
+      "average_event_turnover": 0.08268954718167515,
+      "max_drawdown": -0.31195326243877397,
+      "rebalance_events": 16.0,
+      "sharpe_ratio": -1.185675308654895,
+      "strategy": "weekly_inverse_volatility",
+      "total_return": -0.18006658333493764,
+      "turnover": 1.323032754906802
+    },
+    {
+      "annualized_volatility": 0.4735785077519315,
+      "average_event_turnover": 0.2682485282672375,
+      "max_drawdown": -0.3101893691250367,
+      "rebalance_events": 5.0,
+      "sharpe_ratio": -1.1426936692048424,
+      "strategy": "threshold_inverse_volatility",
+      "total_return": -0.17553910653967275,
+      "turnover": 1.2210009129247108
+    }
+  ],
+  "config": {
+    "covariance_ridge": 1e-10,
+    "drift_threshold": 0.02,
+    "lookback_periods": 43200,
+    "max_weight": 0.35,
+    "min_weight": 0.0,
+    "periods_per_year": 525600,
+    "rebalance_frequency": "7D",
+    "selection_metric": "sharpe_ratio",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "BNBUSDT",
+      "SOLUSDT",
+      "XRPUSDT",
+      "ADAUSDT"
+    ],
+    "test_size": 0.3,
+    "transaction_cost_bps": 5.0
+  },
+  "data_snapshot": "full",
+  "diversification": {
+    "static_max_sharpe_reference": {
+      "average_pairwise_correlation_train": 0.7008510467867582,
+      "effective_assets": 2.985074626865674,
+      "max_weight": 0.34999999999999976,
+      "min_weight": 0.30000000000000043,
+      "nonzero_assets": 3.0,
+      "weight_hhi": 0.33499999999999974
+    },
+    "threshold_inverse_volatility": {
+      "average_pairwise_correlation_train": 0.7008510467867582,
+      "effective_assets": 5.817423478569169,
+      "max_weight": 0.2204977235718986,
+      "min_weight": 0.1259070904977056,
+      "nonzero_assets": 6.0,
+      "weight_hhi": 0.17189740504261108
+    },
+    "weekly_inverse_volatility": {
+      "average_pairwise_correlation_train": 0.7008510467867582,
+      "effective_assets": 5.784386799711556,
+      "max_weight": 0.21729639353118707,
+      "min_weight": 0.11781596657044345,
+      "nonzero_assets": 6.0,
+      "weight_hhi": 0.1728791719201534
+    }
+  },
+  "event_summary": {
+    "static_max_sharpe_reference": {
+      "average_event_turnover": 0.0,
+      "backtest_turnover": 1.0,
+      "event_count": 0.0,
+      "event_turnover": 0.0
+    },
+    "threshold_inverse_volatility": {
+      "average_event_turnover": 0.2682485282672375,
+      "backtest_turnover": 1.2210009129247108,
+      "event_count": 5.0,
+      "event_turnover": 1.3412426413361875
+    },
+    "weekly_inverse_volatility": {
+      "average_event_turnover": 0.08268954718167515,
+      "backtest_turnover": 1.323032754906802,
+      "event_count": 16.0,
+      "event_turnover": 1.3230327549068024
+    }
+  },
+  "notes": [
+    "Dynamic targets use only trailing history available before the effective rebalance timestamp.",
+    "Threshold drift is simulated as passive holding drift and trades are recorded only when the threshold is crossed.",
+    "All strategies are long-only, fully invested, and evaluated by the shared Task 04 cost accounting."
+  ],
+  "selected_strategy": "static_max_sharpe_reference",
+  "selection_criterion": "highest out-of-sample sharpe_ratio",
+  "split_timestamp_utc": "2026-03-05T03:36:00+00:00",
+  "static_reference_weights": {
+    "ADAUSDT": 7.450910185859226e-17,
+    "BNBUSDT": 0.34999999999999976,
+    "BTCUSDT": 0.0,
+    "ETHUSDT": 0.3499999999999995,
+    "SOLUSDT": 2.5673907444456745e-16,
+    "XRPUSDT": 0.30000000000000043
+  },
+  "strategies": {
+    "static_max_sharpe_reference": {
+      "annualized_return": -0.4222716166582729,
+      "annualized_volatility": 0.4593192416604781,
+      "average_turnover": 6.4390256466391505e-06,
+      "calmar_ratio": -1.4405867501102039,
+      "cvar_95": 0.001494303059557955,
+      "hit_rate": 0.5031229877656149,
+      "max_drawdown": -0.29312474005884714,
+      "sharpe_ratio": -0.9648884542697233,
+      "sortino_ratio": -0.9696059574960714,
+      "total_cost": 0.0005,
+      "total_return": -0.14965589729719153,
+      "transaction_cost_bps": 5.0,
+      "turnover": 1.0,
+      "var_95": 0.0009136134024464605
+    },
+    "threshold_inverse_volatility": {
+      "annualized_return": -0.47965667576723264,
+      "annualized_volatility": 0.4735785077519315,
+      "average_turnover": 7.86205619289203e-06,
+      "benchmark_total_return": -0.14965589729719153,
+      "calmar_ratio": -1.5463349924603123,
+      "cvar_95": 0.0015409719407071761,
+      "excess_total_return": -0.02588320924248122,
+      "hit_rate": 0.5024114461593937,
+      "max_drawdown": -0.3101893691250367,
+      "sharpe_ratio": -1.1426936692048424,
+      "sortino_ratio": -1.1480477521600427,
+      "total_cost": 0.0006105004564623555,
+      "total_return": -0.17553910653967275,
+      "transaction_cost_bps": 5.0,
+      "turnover": 1.2210009129247108,
+      "var_95": 0.0009452420197193003
+    },
+    "weekly_inverse_volatility": {
+      "annualized_return": -0.4892640863079547,
+      "annualized_volatility": 0.4725418037330937,
+      "average_turnover": 8.519041840188546e-06,
+      "benchmark_total_return": -0.14965589729719153,
+      "calmar_ratio": -1.5683890672692706,
+      "cvar_95": 0.0015380897530313966,
+      "excess_total_return": -0.030410686037746104,
+      "hit_rate": 0.5024951545708012,
+      "max_drawdown": -0.31195326243877397,
+      "sharpe_ratio": -1.185675308654895,
+      "sortino_ratio": -1.1908484420963124,
+      "total_cost": 0.0006615163774534011,
+      "total_return": -0.18006658333493764,
+      "transaction_cost_bps": 5.0,
+      "turnover": 1.323032754906802,
+      "var_95": 0.0009431274670454465
+    }
+  },
+  "test_period": {
+    "end_utc": "2026-06-20T23:59:00+00:00",
+    "rows": 155304,
+    "start_utc": "2026-03-05T03:36:00+00:00"
+  },
+  "train_period": {
+    "end_utc": "2026-03-05T03:35:00+00:00",
+    "rows": 362376,
+    "start_utc": "2025-06-26T12:00:00+00:00"
+  },
+  "universe": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "ADAUSDT"
+  ]
+}
