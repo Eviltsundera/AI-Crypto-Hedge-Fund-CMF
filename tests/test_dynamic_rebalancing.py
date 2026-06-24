@@ -61,7 +61,7 @@ def test_dynamic_rebalancing_experiment_runs_on_synthetic_prices() -> None:
         transaction_cost_bps=0.0,
         periods_per_year=365,
         lookback_periods=120,
-        rebalance_frequency="2H",
+        rebalance_frequency="2h",
         drift_threshold=0.02,
         max_weight=0.50,
     )

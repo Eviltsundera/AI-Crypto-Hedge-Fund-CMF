@@ -72,7 +72,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--test-size", type=float, default=0.3)
     parser.add_argument("--transaction-cost-bps", type=float, default=5.0)
     parser.add_argument("--lookback-periods", type=int, default=30 * 24 * 60)
-    parser.add_argument("--rebalance-frequency", default="7D")
+    parser.add_argument("--rebalance-frequency", default="7d")
     parser.add_argument("--drift-threshold", type=float, default=0.05)
     parser.add_argument("--max-weight", type=float, default=0.35)
     parser.add_argument("--selection-metric", default="sharpe_ratio")
