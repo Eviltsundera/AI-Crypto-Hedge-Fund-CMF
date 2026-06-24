@@ -102,3 +102,9 @@ Generate the static multi-asset portfolio comparison:
 ```bash
 uv run python scripts/run_static_portfolio.py --snapshot auto
 ```
+
+Generate the dynamic portfolio rebalancing comparison:
+
+```bash
+uv run python scripts/run_dynamic_rebalancing.py --snapshot auto
+```
