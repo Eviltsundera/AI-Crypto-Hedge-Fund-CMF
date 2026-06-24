@@ -90,3 +90,9 @@ Generate the single-asset BTCUSDT baseline report:
 ```bash
 uv run python scripts/run_baseline_strategy.py --snapshot auto
 ```
+
+Generate the single-asset econometric, ML, and agent comparison:
+
+```bash
+uv run python scripts/run_single_asset_models.py --snapshot auto
+```

@@ -6,5 +6,6 @@ Available notes:
 
 - [Backtesting and Metrics Core](backtesting.md)
 - [Single-Asset Baseline Strategy](baseline_strategy.md)
+- [Single-Asset Econometric, ML, and Agent Strategy](single_asset_models.md)
 
 Private planning materials live in `internal_docs/` and are ignored by git.
