@@ -98,7 +98,11 @@ def run_static_portfolio_experiment(
     weights = pd.DataFrame(
         {
             "equal_weight": equal_weight_weights(price_frame.columns),
-            "inverse_volatility": inverse_volatility_weights(train_returns),
+            "inverse_volatility": inverse_volatility_weights(
+                train_returns,
+                min_weight=config.min_weight,
+                max_weight=config.max_weight,
+            ),
             "max_sharpe_constrained": max_sharpe_weights(
                 train_returns,
                 min_weight=config.min_weight,
@@ -179,17 +183,23 @@ def equal_weight_weights(symbols: pd.Index | list[str] | tuple[str, ...]) -> pd.
     return pd.Series(1.0 / len(index), index=index, dtype=float)
 
 
-def inverse_volatility_weights(returns: pd.DataFrame) -> pd.Series:
+def inverse_volatility_weights(
+    returns: pd.DataFrame,
+    min_weight: float = 0.0,
+    max_weight: float = 1.0,
+) -> pd.Series:
     """Return inverse-volatility weights with equal-weight fallback."""
+    _validate_weight_bounds(returns.shape[1], min_weight, max_weight)
     clean_returns = returns.astype(float).replace([np.inf, -np.inf], np.nan).dropna(how="any")
     if clean_returns.empty:
-        return equal_weight_weights(returns.columns)
+        return _cap_and_normalize(equal_weight_weights(returns.columns), min_weight, max_weight)
     volatility = clean_returns.std(ddof=0).replace(0.0, np.nan)
     inverse_vol = 1.0 / volatility
     if inverse_vol.isna().all() or float(inverse_vol.sum(skipna=True)) <= 0.0:
-        return equal_weight_weights(returns.columns)
+        return _cap_and_normalize(equal_weight_weights(returns.columns), min_weight, max_weight)
     weights = inverse_vol.fillna(0.0) / float(inverse_vol.sum(skipna=True))
-    return weights.reindex(returns.columns).astype(float)
+    weights = weights.reindex(returns.columns).astype(float)
+    return _cap_and_normalize(weights, min_weight, max_weight)
 
 
 def max_sharpe_weights(
@@ -200,7 +210,7 @@ def max_sharpe_weights(
 ) -> pd.Series:
     """Return constrained max-Sharpe weights, falling back to inverse volatility."""
     clean_returns = returns.astype(float).replace([np.inf, -np.inf], np.nan).dropna(how="any")
-    fallback = _cap_and_normalize(inverse_volatility_weights(returns), min_weight, max_weight)
+    fallback = inverse_volatility_weights(returns, min_weight=min_weight, max_weight=max_weight)
     if clean_returns.empty:
         return fallback
 

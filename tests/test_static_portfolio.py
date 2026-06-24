@@ -22,7 +22,7 @@ def test_static_weight_methods_are_long_only_and_fully_invested() -> None:
 
     for weights in [
         equal_weight_weights(returns.columns),
-        inverse_volatility_weights(returns),
+        inverse_volatility_weights(returns, max_weight=0.60),
         max_sharpe_weights(returns, max_weight=0.60),
     ]:
         assert abs(float(weights.sum()) - 1.0) < 1e-9
