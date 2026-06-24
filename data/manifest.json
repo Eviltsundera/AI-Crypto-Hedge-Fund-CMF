@@ -8,7 +8,7 @@
     "api_keys_required": false
   },
   "policy": {
-    "full_snapshot_storage": "Ignored local/server bundle; move with scp and publish externally if needed.",
+    "full_snapshot_storage": "Ignored local/server bundle on beleriand; external publication is deferred until the final packaging task.",
     "git_storage": "Only universe files, manifest, code, and a compact sample snapshot are committed.",
     "external_snapshot_target": "data/external/binance_spot_1m_120_12mo"
   },
@@ -292,7 +292,8 @@
       "yandex_disk_url": null,
       "notes": [
         "Full data is intentionally not committed to git.",
-        "After upload, add the public artifact URL and checksum here."
+        "External publication is deferred until the final packaging task.",
+        "After upload, add the public artifact URL here."
       ]
     }
   },

@@ -16,9 +16,10 @@ data/external/binance_spot_1m_120_12mo/
     └── returns_1m.parquet
 ```
 
-Full data should be moved between the laptop and `beleriand` with `scp` and can be uploaded to
-external object storage such as Yandex Disk for final review. The full bundle must be documented
-in `data/manifest.json` with period, symbol count, row counts, file size, and checksum.
+Full data should be moved between the laptop and `beleriand` with `scp` when needed. Uploading
+the bundle to external object storage is deferred until the final packaging task. The full bundle
+must be documented in `data/manifest.json` with period, symbol count, row counts, file size, and
+checksum before publication.
 
 Prepare the compact sample:
 

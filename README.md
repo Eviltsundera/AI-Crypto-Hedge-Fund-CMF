@@ -58,7 +58,7 @@ python -m pytest
 - Final notebook must run top-to-bottom from a clean kernel.
 - Required market data snapshots should be stored under `data/` and documented in `data/manifest.json`.
 - The repository keeps a compact 1-minute sample under `data/sample/` for smoke tests.
-- The full 1-minute 120-pair research snapshot is stored under ignored `data/external/` and moved with `scp` or published as an external data bundle with checksums.
+- The full 1-minute 120-pair research snapshot is stored under ignored `data/external/` on `beleriand`; publishing it to external storage is intentionally deferred until final packaging.
 - `internal_docs/` and `AGENTS.md` are intentionally ignored because they contain local planning and agent instructions.
 
 ## Remote Experiments
