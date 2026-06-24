@@ -1,0 +1,184 @@
+{
+  "comparison_table": [
+    {
+      "annualized_volatility": 0.48838573269385915,
+      "effective_assets": 5.999999999999999,
+      "max_drawdown": -0.32848051912250975,
+      "max_weight": 0.16666666666666666,
+      "sharpe_ratio": -1.2514136351081302,
+      "strategy": "equal_weight",
+      "total_return": -0.19411807421652827,
+      "turnover": 0.9999999999999999
+    },
+    {
+      "annualized_volatility": 0.4697294223026833,
+      "effective_assets": 5.559766567305875,
+      "max_drawdown": -0.31080702382020076,
+      "max_weight": 0.2561768883229811,
+      "sharpe_ratio": -1.1319070809188114,
+      "strategy": "inverse_volatility",
+      "total_return": -0.17278653678400668,
+      "turnover": 1.0
+    },
+    {
+      "annualized_volatility": 0.4593192416604781,
+      "effective_assets": 2.985074626865674,
+      "max_drawdown": -0.29312474005884714,
+      "max_weight": 0.34999999999999976,
+      "sharpe_ratio": -0.9648884542697233,
+      "strategy": "max_sharpe_constrained",
+      "total_return": -0.14965589729719153,
+      "turnover": 1.0
+    }
+  ],
+  "config": {
+    "covariance_ridge": 1e-10,
+    "max_weight": 0.35,
+    "min_weight": 0.0,
+    "periods_per_year": 525600,
+    "selection_metric": "sharpe_ratio",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "BNBUSDT",
+      "SOLUSDT",
+      "XRPUSDT",
+      "ADAUSDT"
+    ],
+    "test_size": 0.3,
+    "transaction_cost_bps": 5.0
+  },
+  "data_snapshot": "full",
+  "diversification": {
+    "equal_weight": {
+      "average_pairwise_correlation_train": 0.7008510467867582,
+      "effective_assets": 5.999999999999999,
+      "max_weight": 0.16666666666666666,
+      "min_weight": 0.16666666666666666,
+      "nonzero_assets": 6.0,
+      "weight_hhi": 0.16666666666666669
+    },
+    "inverse_volatility": {
+      "average_pairwise_correlation_train": 0.7008510467867582,
+      "effective_assets": 5.559766567305875,
+      "max_weight": 0.2561768883229811,
+      "min_weight": 0.1120311539544466,
+      "nonzero_assets": 6.0,
+      "weight_hhi": 0.17986366655760067
+    },
+    "max_sharpe_constrained": {
+      "average_pairwise_correlation_train": 0.7008510467867582,
+      "effective_assets": 2.985074626865674,
+      "max_weight": 0.34999999999999976,
+      "min_weight": 0.30000000000000043,
+      "nonzero_assets": 3.0,
+      "weight_hhi": 0.33499999999999974
+    }
+  },
+  "notes": [
+    "Weights are fitted only on the train period and evaluated on the out-of-sample test period.",
+    "All portfolio methods are long-only, fully invested, and use the shared Task 04 cost accounting.",
+    "Static portfolios pay transaction cost on initial allocation only; no intratest rebalancing is applied."
+  ],
+  "selected_method": "max_sharpe_constrained",
+  "selection_criterion": "highest out-of-sample sharpe_ratio",
+  "split_timestamp_utc": "2026-03-05T03:36:00+00:00",
+  "strategies": {
+    "equal_weight": {
+      "annualized_return": -0.5182857551224435,
+      "annualized_volatility": 0.48838573269385915,
+      "average_turnover": 6.43902564663915e-06,
+      "calmar_ratio": -1.5778279835497464,
+      "cvar_95": 0.0015888227169908193,
+      "hit_rate": 0.5025466674393597,
+      "max_drawdown": -0.32848051912250975,
+      "sharpe_ratio": -1.2514136351081302,
+      "sortino_ratio": -1.2566040922304937,
+      "total_cost": 0.0004999999999999999,
+      "total_return": -0.19411807421652827,
+      "transaction_cost_bps": 5.0,
+      "turnover": 0.9999999999999999,
+      "var_95": 0.0009748187942866468
+    },
+    "inverse_volatility": {
+      "annualized_return": -0.4737538279360626,
+      "annualized_volatility": 0.4697294223026833,
+      "average_turnover": 6.4390256466391505e-06,
+      "benchmark_total_return": -0.19411807421652827,
+      "calmar_ratio": -1.5242700184604745,
+      "cvar_95": 0.0015283974943170943,
+      "excess_total_return": 0.021331537432521586,
+      "hit_rate": 0.5028106708907218,
+      "max_drawdown": -0.31080702382020076,
+      "sharpe_ratio": -1.1319070809188114,
+      "sortino_ratio": -1.1368903232667833,
+      "total_cost": 0.0005,
+      "total_return": -0.17278653678400668,
+      "transaction_cost_bps": 5.0,
+      "turnover": 1.0,
+      "var_95": 0.0009391800529187442
+    },
+    "max_sharpe_constrained": {
+      "annualized_return": -0.4222716166582729,
+      "annualized_volatility": 0.4593192416604781,
+      "average_turnover": 6.4390256466391505e-06,
+      "benchmark_total_return": -0.19411807421652827,
+      "calmar_ratio": -1.4405867501102039,
+      "cvar_95": 0.001494303059557955,
+      "excess_total_return": 0.04446217691933674,
+      "hit_rate": 0.5031229877656149,
+      "max_drawdown": -0.29312474005884714,
+      "sharpe_ratio": -0.9648884542697233,
+      "sortino_ratio": -0.9696059574960714,
+      "total_cost": 0.0005,
+      "total_return": -0.14965589729719153,
+      "transaction_cost_bps": 5.0,
+      "turnover": 1.0,
+      "var_95": 0.0009136134024464605
+    }
+  },
+  "test_period": {
+    "end_utc": "2026-06-20T23:59:00+00:00",
+    "rows": 155304,
+    "start_utc": "2026-03-05T03:36:00+00:00"
+  },
+  "train_period": {
+    "end_utc": "2026-03-05T03:35:00+00:00",
+    "rows": 362376,
+    "start_utc": "2025-06-26T12:00:00+00:00"
+  },
+  "universe": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "ADAUSDT"
+  ],
+  "weights": {
+    "equal_weight": {
+      "ADAUSDT": 0.16666666666666666,
+      "BNBUSDT": 0.16666666666666666,
+      "BTCUSDT": 0.16666666666666666,
+      "ETHUSDT": 0.16666666666666666,
+      "SOLUSDT": 0.16666666666666666,
+      "XRPUSDT": 0.16666666666666666
+    },
+    "inverse_volatility": {
+      "ADAUSDT": 0.1120311539544466,
+      "BNBUSDT": 0.1894364256954888,
+      "BTCUSDT": 0.2561768883229811,
+      "ETHUSDT": 0.1652756783171501,
+      "SOLUSDT": 0.1455133442723839,
+      "XRPUSDT": 0.13156650943754947
+    },
+    "max_sharpe_constrained": {
+      "ADAUSDT": 7.450910185859226e-17,
+      "BNBUSDT": 0.34999999999999976,
+      "BTCUSDT": 0.0,
+      "ETHUSDT": 0.3499999999999995,
+      "SOLUSDT": 2.5673907444456745e-16,
+      "XRPUSDT": 0.30000000000000043
+    }
+  }
+}
