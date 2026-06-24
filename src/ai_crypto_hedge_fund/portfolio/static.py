@@ -278,26 +278,36 @@ def select_best_method(backtests: dict[str, BacktestResult], selection_metric: s
 
 def _cap_and_normalize(weights: pd.Series, min_weight: float, max_weight: float) -> pd.Series:
     _validate_weight_bounds(len(weights), min_weight, max_weight)
-    capped = weights.astype(float).clip(lower=min_weight, upper=max_weight)
-    total = float(capped.sum())
-    if total <= 0.0:
-        capped = equal_weight_weights(weights.index)
-    else:
-        capped = capped / total
-    if float(capped.max()) <= max_weight + 1e-10 and float(capped.min()) >= min_weight - 1e-10:
-        return capped
+    index = weights.index
+    asset_count = len(index)
+    cap_range = max_weight - min_weight
+    remaining = 1.0 - min_weight * asset_count
+    allocation = np.zeros(asset_count, dtype=float)
+    active = np.ones(asset_count, dtype=bool)
+    scores = np.nan_to_num(weights.to_numpy(dtype=float) - min_weight, nan=0.0)
+    scores = np.clip(scores, 0.0, None)
 
-    result = minimize(
-        lambda candidate: float(np.sum((candidate - weights.to_numpy(dtype=float)) ** 2)),
-        capped.to_numpy(dtype=float),
-        method="SLSQP",
-        bounds=[(min_weight, max_weight)] * len(weights),
-        constraints={"type": "eq", "fun": lambda candidate: float(np.sum(candidate) - 1.0)},
-        options={"maxiter": 200, "ftol": 1e-12, "disp": False},
-    )
-    if result.success and np.all(np.isfinite(result.x)):
-        return pd.Series(result.x, index=weights.index, dtype=float)
-    return equal_weight_weights(weights.index)
+    while active.any() and remaining > 1e-12:
+        active_scores = scores[active]
+        if float(active_scores.sum()) <= 0.0:
+            active_scores = np.ones_like(active_scores)
+        proposed = active_scores / float(active_scores.sum()) * remaining
+        capped = proposed > cap_range + 1e-12
+        active_indices = np.flatnonzero(active)
+        if not capped.any():
+            allocation[active_indices] = proposed
+            remaining = 0.0
+            break
+        capped_indices = active_indices[capped]
+        allocation[capped_indices] = cap_range
+        active[capped_indices] = False
+        remaining -= cap_range * len(capped_indices)
+
+    result = pd.Series(allocation + min_weight, index=index, dtype=float)
+    total = float(result.sum())
+    if abs(total - 1.0) > 1e-9:
+        result += (1.0 - total) / asset_count
+    return result.clip(lower=min_weight, upper=max_weight)
 
 
 def _validate_config(config: StaticPortfolioConfig, asset_count: int) -> None:
