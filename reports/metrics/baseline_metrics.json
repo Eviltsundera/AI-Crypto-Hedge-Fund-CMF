@@ -1,0 +1,68 @@
+{
+  "comparison": {
+    "moving_average_excess_sharpe": -5.083616689190757,
+    "moving_average_excess_total_return": -0.2914349760805439
+  },
+  "config": {
+    "fast_window": 60,
+    "periods_per_year": 525600,
+    "slow_window": 360,
+    "symbol": "BTCUSDT",
+    "test_size": 0.3,
+    "transaction_cost_bps": 5.0
+  },
+  "data_snapshot": "full",
+  "notes": [
+    "Signals are shifted by one period inside the backtest to avoid lookahead bias.",
+    "Both strategies are evaluated only on the out-of-sample test period.",
+    "Transaction costs are charged from absolute position turnover."
+  ],
+  "split_timestamp_utc": "2026-03-05T03:36:00+00:00",
+  "strategies": {
+    "buy_and_hold": {
+      "annualized_return": -0.33252314753015044,
+      "annualized_volatility": 0.4310171637109934,
+      "average_turnover": 6.4390256466391505e-06,
+      "calmar_ratio": -1.1631245205265885,
+      "cvar_95": 0.0013986392361045445,
+      "hit_rate": 0.5011469401745459,
+      "max_drawdown": -0.2858878320092548,
+      "sharpe_ratio": -0.72243932821862,
+      "sortino_ratio": -0.7216028945985962,
+      "total_cost": 0.0005,
+      "total_return": -0.11258893134326986,
+      "transaction_cost_bps": 5.0,
+      "turnover": 1.0,
+      "var_95": 0.0008717804844684762
+    },
+    "moving_average_crossover": {
+      "annualized_return": -0.826501670756657,
+      "annualized_volatility": 0.2942294463898589,
+      "average_turnover": 0.0042304398498419216,
+      "benchmark_total_return": -0.11258893134326986,
+      "calmar_ratio": -2.020067850149053,
+      "cvar_95": 0.0010140272797009113,
+      "excess_total_return": -0.2914349760805439,
+      "hit_rate": 0.49278249206538915,
+      "max_drawdown": -0.409145500085887,
+      "sharpe_ratio": -5.806056017409377,
+      "sortino_ratio": -4.131179093126678,
+      "total_cost": 0.32849999999999996,
+      "total_return": -0.4040239074238138,
+      "transaction_cost_bps": 5.0,
+      "turnover": 657.0,
+      "var_95": 0.0005707752255771799
+    }
+  },
+  "symbol": "BTCUSDT",
+  "test_period": {
+    "end_utc": "2026-06-20T23:59:00+00:00",
+    "rows": 155304,
+    "start_utc": "2026-03-05T03:36:00+00:00"
+  },
+  "train_period": {
+    "end_utc": "2026-03-05T03:35:00+00:00",
+    "rows": 362376,
+    "start_utc": "2025-06-26T12:00:00+00:00"
+  }
+}
