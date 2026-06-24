@@ -9,10 +9,10 @@ Primary execution environment: `beleriand`.
 | Check | Result |
 |---|---|
 | Dependency sync | Passed: `uv sync --locked` |
-| Test suite | Passed: `uv run pytest`, 26 tests passed |
+| Test suite | Passed: `uv run pytest`, 27 tests passed |
 | Final notebook execution | Passed: `DATA_MODE=sample uv run jupyter nbconvert --to notebook --execute notebooks/final_solution.ipynb --output /tmp/final_solution_qa.ipynb --ExecutePreprocessor.timeout=300` |
 | Sample data load | Passed: prices `(10080, 6)`, returns `(10079, 6)` |
-| JSON validation | Passed: `data/manifest.json`, notebook JSON, and all metric JSON files |
+| JSON validation | Passed: `data/manifest.json`, notebook JSON, and all 6 metric JSON files |
 | Presentation artifact | Present: `reports/slides/presentation_outline.md` |
 | Full data documentation | Present in `data/manifest.json` and `docs/large_universe.md` |
 | External data publication | Deferred to Task 13 |
