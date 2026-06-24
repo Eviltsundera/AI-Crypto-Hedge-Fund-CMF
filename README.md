@@ -97,6 +97,12 @@ Generate the single-asset econometric, ML, and agent comparison:
 uv run python scripts/run_single_asset_models.py --snapshot auto
 ```
 
+Generate the validation-tuned single-asset ML improvement experiment:
+
+```bash
+uv run python scripts/run_validation_model.py --snapshot auto
+```
+
 Generate the static multi-asset portfolio comparison:
 
 ```bash

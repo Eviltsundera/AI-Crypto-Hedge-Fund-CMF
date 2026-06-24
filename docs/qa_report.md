@@ -25,6 +25,7 @@ Primary execution environment: `beleriand`.
 - Committed sample data under `data/sample/`
 - Full-run reports under `reports/metrics/`
 - Full-run figures under `reports/figures/`
+- Validation-tuned ML improvement report: `reports/metrics/single_asset_validation_model.json`
 
 ## Full Data Bundle
 
