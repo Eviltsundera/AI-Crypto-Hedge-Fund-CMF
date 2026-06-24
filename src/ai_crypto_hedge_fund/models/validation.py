@@ -162,10 +162,12 @@ def run_validation_model_experiment(
     equity_curves = pd.concat(
         [result.equity_curve.rename(name) for name, result in backtests.items()],
         axis=1,
+        sort=False,
     )
     drawdowns = pd.concat(
         [drawdown_series(result.equity_curve).rename(name) for name, result in backtests.items()],
         axis=1,
+        sort=False,
     )
 
     y_validation = validation_frame["target_up"].astype(int)
