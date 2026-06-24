@@ -96,3 +96,9 @@ Generate the single-asset econometric, ML, and agent comparison:
 ```bash
 uv run python scripts/run_single_asset_models.py --snapshot auto
 ```
+
+Generate the static multi-asset portfolio comparison:
+
+```bash
+uv run python scripts/run_static_portfolio.py --snapshot auto
+```
