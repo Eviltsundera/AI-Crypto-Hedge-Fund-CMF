@@ -43,6 +43,17 @@ Outputs:
 - `reports/metrics/single_asset_validation_model.json`
 - `reports/figures/single_asset_validation_model.png`
 
+Generate the cost-aware boosting experiment:
+
+```bash
+uv run python scripts/run_cost_aware_boosting.py --snapshot auto
+```
+
+Outputs:
+
+- `reports/metrics/single_asset_cost_aware_boosting.json`
+- `reports/figures/single_asset_cost_aware_boosting.png`
+
 ## Full-Snapshot Result Summary
 
 The committed report was generated on `beleriand` with the full ignored BTCUSDT data snapshot.
@@ -75,6 +86,23 @@ An additional experiment tests a more defensible ML setup:
 
 The validation-tuned model improved the test ROC AUC to `0.5423` and reduced drawdown versus buy-and-hold, but it did not improve risk-adjusted return after turnover. This is retained as a negative but useful validation result rather than replacing the original Task 06 comparison.
 
+## Cost-Aware Boosting Experiment
+
+This experiment uses `HistGradientBoostingClassifier` and a cost-aware target:
+
+- target horizon: future 60-minute return;
+- positive class: future return `> 0.0010`;
+- negative class: future return `< -0.0010`;
+- neutral rows inside the buffer are dropped from training;
+- threshold is selected on validation Sharpe only.
+
+| Strategy | Total Return | Sharpe | Max Drawdown | Turnover |
+|---|---:|---:|---:|---:|
+| Buy-and-hold | -0.1126 | -0.7224 | -0.2859 | 1 |
+| Cost-aware HistGradientBoosting | -0.0600 | -2.9922 | -0.0806 | 122 |
+
+The boosting model improved total return and max drawdown versus buy-and-hold, and test ROC AUC on labeled rows was `0.5371`. Sharpe remained worse than buy-and-hold because the strategy still had negative return after costs.
+
 ## Bias Controls
 
 - Training labels are restricted to rows whose next-return timestamp is before the test split.
@@ -84,3 +112,4 @@ The validation-tuned model improved the test ROC AUC to `0.5423` and reduced dra
 - Comparison metrics are calculated on the same out-of-sample test period as the Task 05 baseline.
 - The report includes a 50% random-chance reference, majority-class reference, test direction accuracy, and ROC AUC where defined.
 - The validation-tuned improvement experiment selects its threshold inside the training period and documents the validation grid.
+- The cost-aware boosting experiment drops neutral labels and selects its threshold on validation data, not on the test period.

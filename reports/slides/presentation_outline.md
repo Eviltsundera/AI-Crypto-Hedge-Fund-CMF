@@ -120,11 +120,12 @@ BTCUSDT out-of-sample test:
 | Buy and hold | -11.26% | -0.72 | -28.59% |
 | Moving average | -40.40% | -5.81 | -40.91% |
 | RandomForest | -6.13% | -4.89 | -6.84% |
+| Cost-aware boosting | -6.00% | -2.99 | -8.06% |
 | Agent enhanced | -13.21% | -4.39 | -13.99% |
 
 Interpretation:
 
-- ML improved drawdown;
+- ML improved drawdown versus buy-and-hold;
 - 1-minute labels remain noisy and cost-sensitive.
 
 ---

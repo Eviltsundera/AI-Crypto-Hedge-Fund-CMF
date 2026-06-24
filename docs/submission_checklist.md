@@ -24,6 +24,7 @@ DATA_MODE=sample uv run jupyter nbconvert --to notebook --execute notebooks/fina
 uv run python scripts/run_baseline_strategy.py --snapshot auto
 uv run python scripts/run_single_asset_models.py --snapshot auto
 uv run python scripts/run_validation_model.py --snapshot auto
+uv run python scripts/run_cost_aware_boosting.py --snapshot auto
 uv run python scripts/run_static_portfolio.py --snapshot auto
 uv run python scripts/run_dynamic_rebalancing.py --snapshot auto
 uv run python scripts/run_large_universe.py --snapshot auto

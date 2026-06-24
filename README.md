@@ -103,6 +103,12 @@ Generate the validation-tuned single-asset ML improvement experiment:
 uv run python scripts/run_validation_model.py --snapshot auto
 ```
 
+Generate the cost-aware boosting single-asset experiment:
+
+```bash
+uv run python scripts/run_cost_aware_boosting.py --snapshot auto
+```
+
 Generate the static multi-asset portfolio comparison:
 
 ```bash
