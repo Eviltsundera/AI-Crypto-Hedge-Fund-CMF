@@ -67,7 +67,11 @@ Processed file checksums:
 | `prices_1m.parquet` | 95258376 | `027a8a0ba6841e04e39513f8262a5d451bcb27369bb07a308e6059d617ef9dff` |
 | `returns_1m.parquet` | 193142203 | `2c4b8ed154f959fe7cb598524b214fcb423acab61ef3ae3169a4c717af6fe491` |
 
-The public URL for this ignored bundle is intentionally deferred to the final external data publication task.
+Public processed bundle URL:
+
+```text
+https://disk.yandex.ru/d/Ztu0gLiKMCiiIw
+```
 
 ## Monitoring and Fail-Safes
 

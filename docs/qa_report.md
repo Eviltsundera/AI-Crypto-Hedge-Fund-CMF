@@ -15,7 +15,7 @@ Primary execution environment: `beleriand`.
 | JSON validation | Passed: `data/manifest.json`, notebook JSON, and all 7 metric JSON files |
 | Presentation artifact | Present: `reports/slides/presentation_outline.md` |
 | Full data documentation | Present in `data/manifest.json` and `docs/large_universe.md` |
-| External data publication | Deferred to Task 13 |
+| External data publication | Published to Yandex Disk |
 
 ## Included Artifacts
 
@@ -43,7 +43,11 @@ Checksums:
 | `prices_1m.parquet` | 95258376 | `027a8a0ba6841e04e39513f8262a5d451bcb27369bb07a308e6059d617ef9dff` |
 | `returns_1m.parquet` | 193142203 | `2c4b8ed154f959fe7cb598524b214fcb423acab61ef3ae3169a4c717af6fe491` |
 
-The public URL remains `null` until the final external publication task.
+Public processed bundle URL:
+
+```text
+https://disk.yandex.ru/d/Ztu0gLiKMCiiIw
+```
 
 ## Known Gaps
 

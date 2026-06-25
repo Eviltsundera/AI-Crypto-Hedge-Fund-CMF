@@ -32,7 +32,11 @@ uv run python scripts/run_large_universe.py --snapshot auto
 
 ## Full Data Bundle
 
-The full 1-minute 120-pair data bundle is not committed. It remains deferred to Task 13 for external publication.
+The full 1-minute 120-pair processed data bundle is not committed. It is published separately on Yandex Disk:
+
+```text
+https://disk.yandex.ru/d/Ztu0gLiKMCiiIw
+```
 
 Current server path:
 

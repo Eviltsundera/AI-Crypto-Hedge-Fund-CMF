@@ -58,7 +58,7 @@ python -m pytest
 - Final notebook must run top-to-bottom from a clean kernel.
 - Required market data snapshots should be stored under `data/` and documented in `data/manifest.json`.
 - The repository keeps a compact 1-minute sample under `data/sample/` for smoke tests.
-- The full 1-minute 120-pair research snapshot is stored under ignored `data/external/` on `beleriand`; publishing it to external storage is intentionally deferred until final packaging.
+- The full 1-minute 120-pair processed research snapshot is stored under ignored `data/external/` and published on Yandex Disk; see `data/manifest.json`.
 - Shared metrics and backtesting utilities live in `ai_crypto_hedge_fund.metrics` and `ai_crypto_hedge_fund.backtest`; see `docs/backtesting.md`.
 - `internal_docs/` and `AGENTS.md` are intentionally ignored because they contain local planning and agent instructions.
 
@@ -77,6 +77,18 @@ Prepare the full ignored data bundle on `beleriand`:
 ```bash
 uv sync
 uv run python scripts/prepare_data.py --mode full --large-limit 120 --candidate-limit 250 --target-symbol-count 120 --min-symbol-coverage 0.95 --start 2025-06-22 --end 2026-06-22
+```
+
+Alternatively, download the processed full bundle from Yandex Disk and place it under:
+
+```text
+data/external/binance_spot_1m_120_12mo/processed/
+```
+
+Public bundle URL:
+
+```text
+https://disk.yandex.ru/d/Ztu0gLiKMCiiIw
 ```
 
 Prepare or refresh the compact committed sample:

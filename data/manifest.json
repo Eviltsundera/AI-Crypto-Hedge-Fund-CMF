@@ -8,7 +8,7 @@
     "api_keys_required": false
   },
   "policy": {
-    "full_snapshot_storage": "Ignored local/server bundle on beleriand; external publication is deferred until the final packaging task.",
+    "full_snapshot_storage": "Ignored git bundle under data/external/; public processed-bundle URL is recorded in snapshots.full.",
     "git_storage": "Only universe files, manifest, code, and a compact sample snapshot are committed.",
     "external_snapshot_target": "data/external/binance_spot_1m_120_12mo"
   },
@@ -289,17 +289,16 @@
           "sha256": "2c4b8ed154f959fe7cb598524b214fcb423acab61ef3ae3169a4c717af6fe491"
         }
       },
-      "yandex_disk_url": null,
+      "yandex_disk_url": "https://disk.yandex.ru/d/Ztu0gLiKMCiiIw",
       "notes": [
         "Full data is intentionally not committed to git.",
-        "External publication is deferred until the final packaging task.",
-        "After upload, add the public artifact URL here."
+        "Public processed data bundle is available on Yandex Disk."
       ],
       "processed_bundle": {
         "relative_dir": "data/external/binance_spot_1m_120_12mo/processed",
         "beleriand_dir": "/home/gajnanovda/AI-Crypto-Hedge-Fund-CMF/data/external/binance_spot_1m_120_12mo/processed",
-        "public_url": null,
-        "publication_status": "deferred_to_task_13",
+        "public_url": "https://disk.yandex.ru/d/Ztu0gLiKMCiiIw",
+        "publication_status": "published_to_yandex_disk",
         "files": {
           "prices_1m.parquet": {
             "size_bytes": 95258376,
@@ -309,7 +308,12 @@
             "size_bytes": 193142203,
             "sha256": "2c4b8ed154f959fe7cb598524b214fcb423acab61ef3ae3169a4c717af6fe491"
           }
-        }
+        },
+        "published_at": "2026-06-25",
+        "published_contents": [
+          "processed/prices_1m.parquet",
+          "processed/returns_1m.parquet"
+        ]
       }
     }
   },
