@@ -5,10 +5,18 @@ Reproducible MVP for an AI agent-based automated cryptocurrency trading and risk
 The project is structured around the assignment deliverables:
 
 - concept presentation for an AI crypto hedge fund;
+- technical implementation presentation with results;
 - reproducible technical implementation in one final notebook;
 - modular Python package for data preparation, metrics, backtesting, models, agents, and portfolio logic;
 - included data snapshot for offline reproduction;
 - tests and QA notes for reproducibility.
+
+Presentation artifacts:
+
+- Part 1 concept outline: `reports/slides/presentation_outline.md`;
+- Part 2 technical presentation: `reports/slides/technical_implementation.pdf`;
+- Part 2 Typst source: `reports/slides/technical_implementation.typ`;
+- Part 2 speaker notes: `reports/slides/technical_implementation_speaker_notes.md`.
 
 ## Quickstart
 
@@ -95,6 +103,12 @@ Prepare or refresh the compact committed sample:
 
 ```bash
 uv run python scripts/prepare_data.py --mode sample --start 2026-06-01 --end 2026-06-08
+```
+
+Build the Part 2 technical presentation:
+
+```bash
+typst compile --root . reports/slides/technical_implementation.typ reports/slides/technical_implementation.pdf
 ```
 
 Generate the single-asset BTCUSDT baseline report:

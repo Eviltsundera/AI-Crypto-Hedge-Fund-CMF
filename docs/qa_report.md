@@ -14,6 +14,10 @@ Primary execution environment: `beleriand`.
 | Sample data load | Passed: prices `(10080, 6)`, returns `(10079, 6)` |
 | JSON validation | Passed: `data/manifest.json`, notebook JSON, and all 7 metric JSON files |
 | Presentation artifact | Present: `reports/slides/presentation_outline.md` |
+| Technical presentation artifact | Present: `reports/slides/technical_implementation.typ`, `reports/slides/technical_implementation.pdf`, and `reports/slides/technical_implementation_speaker_notes.md` |
+| Technical presentation compile | Passed: `typst compile --root . reports/slides/technical_implementation.typ reports/slides/technical_implementation.pdf`; PDF has 12 pages |
+| Rubric checklist | Present: `docs/rubric_checklist.md` |
+| Deliverables map | Present: `docs/deliverables.md` |
 | Full data documentation | Present in `data/manifest.json` and `docs/large_universe.md` |
 | External data publication | Published to Yandex Disk |
 
@@ -21,6 +25,9 @@ Primary execution environment: `beleriand`.
 
 - Final notebook: `notebooks/final_solution.ipynb`
 - Presentation outline: `reports/slides/presentation_outline.md`
+- Technical implementation presentation: `reports/slides/technical_implementation.pdf`
+- Technical implementation presentation source: `reports/slides/technical_implementation.typ`
+- Technical implementation speaker notes: `reports/slides/technical_implementation_speaker_notes.md`
 - Public docs under `docs/`
 - Committed sample data under `data/sample/`
 - Full-run reports under `reports/metrics/`
@@ -62,4 +69,5 @@ https://disk.yandex.ru/d/Ztu0gLiKMCiiIw
 uv sync --locked
 uv run pytest
 DATA_MODE=sample uv run jupyter nbconvert --to notebook --execute notebooks/final_solution.ipynb --output /tmp/final_solution_qa.ipynb --ExecutePreprocessor.timeout=300
+typst compile --root . reports/slides/technical_implementation.typ reports/slides/technical_implementation.pdf
 ```

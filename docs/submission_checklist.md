@@ -6,7 +6,12 @@ Use this file as the reviewer-facing map for the final submission.
 
 - Final notebook: `notebooks/final_solution.ipynb`
 - Presentation: `reports/slides/presentation_outline.md`
+- Technical implementation presentation: `reports/slides/technical_implementation.pdf`
+- Technical implementation presentation source: `reports/slides/technical_implementation.typ`
+- Technical implementation speaker notes: `reports/slides/technical_implementation_speaker_notes.md`
 - QA report: `docs/qa_report.md`
+- Rubric checklist: `docs/rubric_checklist.md`
+- Deliverables map: `docs/deliverables.md`
 - Main project README: `README.md`
 - Full data manifest and checksums: `data/manifest.json`
 
@@ -16,6 +21,7 @@ Use this file as the reviewer-facing map for the final submission.
 uv sync --locked
 uv run pytest
 DATA_MODE=sample uv run jupyter nbconvert --to notebook --execute notebooks/final_solution.ipynb --output /tmp/final_solution_qa.ipynb --ExecutePreprocessor.timeout=300
+typst compile --root . reports/slides/technical_implementation.typ reports/slides/technical_implementation.pdf
 ```
 
 ## Regenerate Reports

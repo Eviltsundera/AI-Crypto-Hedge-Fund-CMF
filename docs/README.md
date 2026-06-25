@@ -4,6 +4,8 @@ This directory is reserved for public project documentation such as QA reports, 
 
 Available notes:
 
+- [Rubric Checklist](rubric_checklist.md)
+- [Deliverables](deliverables.md)
 - [Backtesting and Metrics Core](backtesting.md)
 - [Single-Asset Baseline Strategy](baseline_strategy.md)
 - [Single-Asset Econometric, ML, and Agent Strategy](single_asset_models.md)
@@ -13,5 +15,8 @@ Available notes:
 - [Quality Assurance Report](qa_report.md)
 - [Submission Checklist](submission_checklist.md)
 - Presentation deck: [`reports/slides/presentation_outline.md`](../reports/slides/presentation_outline.md)
+- Part 2 technical presentation: [`reports/slides/technical_implementation.pdf`](../reports/slides/technical_implementation.pdf)
+- Part 2 presentation source: [`reports/slides/technical_implementation.typ`](../reports/slides/technical_implementation.typ)
+- Part 2 speaker notes: [`reports/slides/technical_implementation_speaker_notes.md`](../reports/slides/technical_implementation_speaker_notes.md)
 
 Private planning materials live in `internal_docs/` and are ignored by git.
